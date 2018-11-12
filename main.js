@@ -10,8 +10,10 @@ main = document.getElementById('main');
 overlay = document.getElementById('overlay');
 
 
-var submit = document.querySelector("button");
-submit.addEventListener('click', getInfo);
+var addToTeam = document.querySelector("input[value = 'addToTeam']");
+var getStats = document.querySelector("input[value = 'getStats']");
+addToTeam.addEventListener('click', getInfo);
+getStats.addEventListener('click', getInfo);
 
 var body = document.querySelector('body');
 
@@ -21,7 +23,7 @@ function change() {
     x = `00${x}`;
   }else if (x >= 10 && x < 100) {
     x = `0${x}`;
-  } 
+  }
   body.style.backgroundImage = `url('https://assets.pokemon.com/assets/cms2/img/pokedex/full/${x}.png')`;
 }
 
@@ -41,6 +43,12 @@ function reveal(id) {
 
 function getInfo() {
   var id = document.querySelector('input[name = "pokemon"]').value;
-  reveal(id);
-  setPokemon(id);
+  if (this.value == 'getStats'){
+    setPokemon(id);
+  } else if (this.value == 'addToTeam') {
+    reveal(id);
+    console.log(setPokemon(id));
+    // me.pokemon.push(pokemon);
+  }
+  // setPokemon(id);
 }
