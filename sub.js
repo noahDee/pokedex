@@ -76,7 +76,16 @@ function stats() {
       spDef.innerHTML = `Sp.DEF: ${me.pokemon[i].spDef}`;
       speed.innerHTML = `SPEED: ${me.pokemon[i].speed}`;
       name.innerHTML = `${me.pokemon[i].name}`.toUpperCase();
-      pic.setAttribute('src',`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${me.pokemon[i].idNum}.png`);
+
+      if(me.pokemon[i].idNum < 10){
+        let y = `00${me.pokemon[i].idNum}`;
+        pic.setAttribute('src',`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${y}.png`);
+      }else if (me.pokemon[i].idNum >= 10 && me.pokemon[i].idNum < 100) {
+        let y = `0${me.pokemon[i].idNum}`;
+        pic.setAttribute('src',`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${y}.png`);
+      } else {
+        pic.setAttribute('src',`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${me.pokemon[i].idNum}.png`);
+      }
       break;
     }
   }

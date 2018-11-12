@@ -17,6 +17,11 @@ var body = document.querySelector('body');
 
 function change() {
   let x = this.id;
+  if(x < 10){
+    x = `00${x}`;
+  }else if (x >= 10 && x < 100) {
+    x = `0${x}`;
+  } 
   body.style.backgroundImage = `url('https://assets.pokemon.com/assets/cms2/img/pokedex/full/${x}.png')`;
 }
 
