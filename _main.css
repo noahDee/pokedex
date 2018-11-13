@@ -22,3 +22,12 @@ body {
 .hidden {
   visibility: hidden;
 }
+
+input[type = text] {
+  width: 300px !important;
+  font-size: 1.2em !important;
+  font-weight: 700;
+  font-family: 'Audiowide', sans-serif !important;
+  border: 2px solid black !important;
+  text-align: center;
+}

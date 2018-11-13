@@ -1,6 +1,6 @@
 class Pokemon {
     constructor(name, hp, def, atk, spDef, spAtk, speed, idNum) {
-      this.name = name
+      this.name = name;
       this.hp = hp;
       this.def = def;
       this.atk = atk
@@ -38,16 +38,17 @@ function setPokemon(id) {
       var data = JSON.parse(this.responseText);
         let pokemon = new Pokemon(
         data['species']['name'],
-        data['stats'][4]['base_stat'],
-        data['stats'][3]['base_stat'],
         data['stats'][5]['base_stat'],
+        data['stats'][3]['base_stat'],
+        data['stats'][4]['base_stat'],
         data['stats'][1]['base_stat'],
         data['stats'][2]['base_stat'],
         data['stats'][0]['base_stat'],
         data['id'],
       );
-      pokemon.abilities.push(data['abilities'][0]['ability']['name']);
-      pokemon.abilities.push(data['abilities'][1]['ability']['name']);
+      for (var i = 0; i < data['abilities'].length; i++) {
+        pokemon.abilities.push(data['abilities'][i]['ability']['name']);
+      }
       stats(pokemon);
       move(pokemon);
     }
@@ -63,17 +64,20 @@ function addPokemon(id) {
       var data = JSON.parse(this.responseText);
         let pokemon = new Pokemon(
         data['species']['name'],
-        data['stats'][4]['base_stat'],
-        data['stats'][3]['base_stat'],
         data['stats'][5]['base_stat'],
+        data['stats'][3]['base_stat'],
+        data['stats'][4]['base_stat'],
         data['stats'][1]['base_stat'],
         data['stats'][2]['base_stat'],
         data['stats'][0]['base_stat'],
         data['id'],
       );
-      pokemon.abilities.push(data['abilities'][0]['ability']['name']);
-      pokemon.abilities.push(data['abilities'][1]['ability']['name']);
+      for (var i = 0; i < data['abilities'].length; i++) {
+        pokemon.abilities.push(data['abilities'][i]['ability']['name']);
+      }
       me.pokemon.push(pokemon);
+      window.scrollTo({top:0, behavior: 'smooth'});
+
     }
   }
   xhttp.open('GET', `http://fizal.me/pokeapi/api/v2/id/${id}.json`)
@@ -83,6 +87,8 @@ function addPokemon(id) {
 
 function stats(pokemon) {
   overlay.classList.remove('hidden');
+  var name = document.getElementById('stats');
+
       hp.innerHTML = `HP: ${pokemon.hp}`;
       def.innerHTML = `DEF: ${pokemon.def}`;
       atk.innerHTML = `ATK: ${pokemon.atk}`;
@@ -110,12 +116,12 @@ function move(pokemon) {
   var width4 = 35;
   var width5 = 35;
   var width6 = 35;
-  var id1 = setInterval(hpframe, 10);
-  var id2 = setInterval(defframe, 10);
-  var id3 = setInterval(atkframe, 10);
-  var id4 = setInterval(spatkframe, 10);
-  var id5 = setInterval(spdefframe, 10);
-  var id6 = setInterval(speedframe, 10);
+  var id1 = setInterval(hpframe, 20);
+  var id2 = setInterval(defframe, 20);
+  var id3 = setInterval(atkframe, 20);
+  var id4 = setInterval(spatkframe, 20);
+  var id5 = setInterval(spdefframe, 20);
+  var id6 = setInterval(speedframe, 20);
   function hpframe() {
     if (width1 >= (pokemon.hp/3)+35) {
       clearInterval(id1);

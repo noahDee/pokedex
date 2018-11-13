@@ -4,22 +4,22 @@ var atk = document.getElementById('atk2');
 var spAtk = document.getElementById('spatk2');
 var spDef = document.getElementById('spdef2');
 var speed = document.getElementById('speed2');
-var name = document.getElementById('stats');
 var pic = document.querySelector('#sprite > img');
+
 var pokeball = document.querySelectorAll('.pokeball');
 for (var i = 0; i < pokeball.length; i++) {
   pokeball[i].addEventListener('mouseover',change);
   pokeball[i].addEventListener('mouseout',revert);
   console.log('p');
-  pokeball[i].addEventListener('click',stats);
+  pokeball[i].addEventListener('click',getInfo);
 }
 
 main = document.getElementById('main');
 overlay = document.getElementById('overlay');
 
 
-var addToTeam = document.querySelector("input[value = 'addToTeam']");
-var getStats = document.querySelector("input[value = 'getStats']");
+var addToTeam = document.querySelector("input[value = 'Add to team']");
+var getStats = document.querySelector("input[value = 'View Stats']");
 addToTeam.addEventListener('click', getInfo);
 getStats.addEventListener('click', getInfo);
 
@@ -51,14 +51,12 @@ function reveal(id) {
 
 function getInfo() {
   var id = document.querySelector('input[name = "pokemon"]').value;
-  if (this.value == 'getStats'){
+  if (this.value == 'View Stats'){
     setPokemon(id);
-  } else if (this.value == 'addToTeam') {
+  } else if (this.value == 'Add to team') {
     reveal(id);
     addPokemon(id);
-    // var j = setPokemon(id);
-    // console.log(j);
-    // me.pokemon.push(setPokemon(id));
+  } else if (this.classList == 'pokeball') {
+    setPokemon(this.id);
   }
-  // setPokemon(id);
 }
