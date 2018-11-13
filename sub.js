@@ -49,6 +49,7 @@ function setPokemon(id) {
       pokemon.abilities.push(data['abilities'][0]['ability']['name']);
       pokemon.abilities.push(data['abilities'][1]['ability']['name']);
       stats(pokemon);
+      move(pokemon);
     }
   }
   xhttp.open('GET', `http://fizal.me/pokeapi/api/v2/id/${id}.json`)
@@ -82,14 +83,6 @@ function addPokemon(id) {
 
 function stats(pokemon) {
   overlay.classList.remove('hidden');
-  var hp = document.getElementById('hp2');
-  var def = document.getElementById('def2');
-  var atk = document.getElementById('atk2');
-  var spAtk = document.getElementById('spatk2');
-  var spDef = document.getElementById('spdef2');
-  var speed = document.getElementById('speed2');
-  var name = document.getElementById('stats');
-  var pic = document.querySelector('#sprite > img');
       hp.innerHTML = `HP: ${pokemon.hp}`;
       def.innerHTML = `DEF: ${pokemon.def}`;
       atk.innerHTML = `ATK: ${pokemon.atk}`;
@@ -109,6 +102,71 @@ function stats(pokemon) {
       }
   window.scrollTo({top:500, behavior: 'smooth'});
 }
+
+function move(pokemon) {
+  var width1 = 35;
+  var width2 = 35;
+  var width3 = 35;
+  var width4 = 35;
+  var width5 = 35;
+  var width6 = 35;
+  var id1 = setInterval(hpframe, 10);
+  var id2 = setInterval(defframe, 10);
+  var id3 = setInterval(atkframe, 10);
+  var id4 = setInterval(spatkframe, 10);
+  var id5 = setInterval(spdefframe, 10);
+  var id6 = setInterval(speedframe, 10);
+  function hpframe() {
+    if (width1 >= (pokemon.hp/3)+35) {
+      clearInterval(id1);
+    } else {
+      width1++;
+      hp.parentElement.style.width = width1 + '%';
+    }
+  }
+  function defframe() {
+    if (width2 >= (pokemon.def/3)+35) {
+      clearInterval(id2);
+    } else {
+      width2++;
+      def.parentElement.style.width = width2 + '%';
+    }
+  }
+  function atkframe() {
+    if (width3 >= (pokemon.atk/3)+35) {
+      clearInterval(id3);
+    } else {
+      width3++;
+      atk.parentElement.style.width = width3 + '%';
+    }
+  }
+  function spatkframe() {
+    if (width4 >= (pokemon.spAtk/3)+35) {
+      clearInterval(id4);
+    } else {
+      width4++;
+      spAtk.parentElement.style.width = width4 + '%';
+    }
+  }
+  function spdefframe() {
+    if (width5 >= (pokemon.spDef/3)+35) {
+      clearInterval(id5);
+    } else {
+      width5++;
+      spDef.parentElement.style.width = width5 + '%';
+    }
+  }
+  function speedframe() {
+    if (width6 >= (pokemon.speed/3)+35) {
+      clearInterval(id6);
+    } else {
+      width6++;
+      speed.parentElement.style.width = width6 + '%';
+    }
+  }
+}
+
+
 
 
 var me = new Trainer('Trash Ketchum');

@@ -1,3 +1,11 @@
+var hp = document.getElementById('hp2');
+var def = document.getElementById('def2');
+var atk = document.getElementById('atk2');
+var spAtk = document.getElementById('spatk2');
+var spDef = document.getElementById('spdef2');
+var speed = document.getElementById('speed2');
+var name = document.getElementById('stats');
+var pic = document.querySelector('#sprite > img');
 var pokeball = document.querySelectorAll('.pokeball');
 for (var i = 0; i < pokeball.length; i++) {
   pokeball[i].addEventListener('mouseover',change);
