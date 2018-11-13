@@ -47,8 +47,10 @@ function getInfo() {
     setPokemon(id);
   } else if (this.value == 'addToTeam') {
     reveal(id);
-    console.log(setPokemon(id));
-    // me.pokemon.push(pokemon);
+    addPokemon(id);
+    // var j = setPokemon(id);
+    // console.log(j);
+    // me.pokemon.push(setPokemon(id));
   }
   // setPokemon(id);
 }
