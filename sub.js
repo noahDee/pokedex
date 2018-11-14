@@ -53,7 +53,7 @@ function setPokemon(id) {
       move(pokemon);
     }
   }
-  xhttp.open('GET', `http://fizal.me/pokeapi/api/v2/id/${id}.json`)
+  xhttp.open('GET', `https://fizal.me/pokeapi/api/v2/id/${id}.json`)
   xhttp.send();
 }
 
@@ -80,7 +80,7 @@ function addPokemon(id) {
 
     }
   }
-  xhttp.open('GET', `http://fizal.me/pokeapi/api/v2/id/${id}.json`)
+  xhttp.open('GET', `https://fizal.me/pokeapi/api/v2/id/${id}.json`)
   xhttp.send();
 }
 
