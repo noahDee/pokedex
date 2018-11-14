@@ -96,7 +96,8 @@ function stats(pokemon) {
       spDef.innerHTML = `Sp.DEF: ${pokemon.spDef}`;
       speed.innerHTML = `SPEED: ${pokemon.speed}`;
       name.innerHTML = `${pokemon.name}`.toUpperCase();
-
+      let ability = pokemon.abilities.toString().toUpperCase();
+      abilities.innerHTML = `[ABILITIES: ${ability}]`;
       if(pokemon.idNum < 10){
         let y = `00${pokemon.idNum}`;
         pic.setAttribute('src',`https://assets.pokemon.com/assets/cms2/img/pokedex/full/${y}.png`);

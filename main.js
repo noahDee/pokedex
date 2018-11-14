@@ -4,6 +4,7 @@ var atk = document.getElementById('atk2');
 var spAtk = document.getElementById('spatk2');
 var spDef = document.getElementById('spdef2');
 var speed = document.getElementById('speed2');
+var abilities = document.getElementById('abilities');
 var pic = document.querySelector('#sprite > img');
 
 var pokeball = document.querySelectorAll('.pokeball');
