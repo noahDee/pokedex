@@ -17,7 +17,7 @@ Sass
 JavaScript
 BootStrap
 
-#Author
+# Author
 Noah Dorce (2018)
 
 
