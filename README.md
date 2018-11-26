@@ -10,12 +10,12 @@ View Stats: Reveals the pokemon's stats and scrolls to bring the module to the c
 Add to team: Adds a pokeball on the screen, indicating that the pokemon entered has been added to your team. When the pokeball is hovered over with the mouse, a spin animation is activated and the website background image changes to the pokemon it is assigned to. When the pokeball is clicked, that pokemons stats will load into the module and the screen will be repositioned so it is in the center.
 
 # Built With
-This webpage utilizes: 
-HTML
-CSS
-Sass
-JavaScript
-BootStrap
+This webpage utilizes:  
+HTML  
+CSS  
+Sass  
+JavaScript  
+BootStrap  
 
 # Author
 Noah Dorce (2018)
