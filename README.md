@@ -14,7 +14,7 @@ This webpage utilizes:
 HTML  
 CSS  
 Sass  
-JavaScript  
+JavaScript(AJAX,JSON)  
 BootStrap  
 
 # Author
