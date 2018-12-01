@@ -1,5 +1,5 @@
 # Personal Pokedex  
-https://noahdee.github.io/pokedex/
+https://noahdee.github.io/pokedex/  
 This webpage utilizes a pokemon API and the official pokemon website in conjunction to give the user the ability to enter a pokemon id 
 number and either retrieve their stats or add them to their personal team.
 
