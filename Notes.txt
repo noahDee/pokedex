@@ -1,0 +1,7 @@
+fix stats bar (blissey, guzzlord)
+allow name and number
+fail safes
+responsivesness
+animate.css?
+
+set amount of lives

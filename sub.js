@@ -9,6 +9,7 @@ class Pokemon {
       this.speed = speed;
       this.idNum = idNum;
       this.abilities = [];
+      this.moves = [];
     }
 }
 
@@ -49,6 +50,7 @@ function setPokemon(id) {
       for (var i = 0; i < data['abilities'].length; i++) {
         pokemon.abilities.push(data['abilities'][i]['ability']['name']);
       }
+
       stats(pokemon);
       move(pokemon);
     }
@@ -74,6 +76,9 @@ function addPokemon(id) {
       );
       for (var i = 0; i < data['abilities'].length; i++) {
         pokemon.abilities.push(data['abilities'][i]['ability']['name']);
+      }
+      for (var i = 0; i < data['moves'].length; i++) {
+        pokemon.moves.push(data['moves'][i]['move']);
       }
       me.pokemon.push(pokemon);
       window.scrollTo({top:0, behavior: 'smooth'});

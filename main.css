@@ -10,13 +10,15 @@ body {
 .pokeball {
   height:200px;
   width: 200px;
-  transition: transform 3s;
+  transition: transform 3s, opacity 2s;
   padding: 50px;
 }
 
 
 .pokeball:hover {
-  transform: rotate(2160deg);
+  /* transform: rotate(2160deg);
+  opacity: 0 */
+  cursor: pointer;
 }
 
 .hidden {

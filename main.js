@@ -28,16 +28,19 @@ var body = document.querySelector('body');
 
 function change() {
   let x = this.id;
-  if(x < 10){
-    x = `00${x}`;
-  }else if (x >= 10 && x < 100) {
-    x = `0${x}`;
-  }
-  body.style.backgroundImage = `url('https://assets.pokemon.com/assets/cms2/img/pokedex/full/${x}.png')`;
+  // if(x < 10){
+  //   x = `00${x}`;
+  // }else if (x >= 10 && x < 100) {
+  //   x = `0${x}`;
+  // }
+  // body.style.backgroundImage = `url('https://assets.pokemon.com/assets/cms2/img/pokedex/full/${x}.png')`;
+  this.setAttribute('src',`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${x}.png`)
 }
 
 function revert() {
-  body.style.backgroundImage = "url('https://pa1.narvii.com/6747/649d6b93875ee07b21ef208fbe72c87d3dbee838_hq.gif')";
+
+  this.setAttribute('src','http://www.upl.co/uploads/pokeballPNG301527618582.png')
+  
 }
 
 function reveal(id) {
