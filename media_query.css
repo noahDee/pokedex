@@ -1,7 +1,7 @@
 @media only screen and (max-width: 1340px) {
   body {
     /* background-color: blue; */
-    background-image: url("http://www.payless.com/on/demandware.static/-/Sites-payless-catalog/default/dw72f7c4c6/images/hi-res/159696_6_1400x1400.jpg") !important;
-    width: 1400px !important; 
+    /* background-image: url("http://www.payless.com/on/demandware.static/-/Sites-payless-catalog/default/dw72f7c4c6/images/hi-res/159696_6_1400x1400.jpg") !important; */
+    width: 1400px !important;
   }
 }
