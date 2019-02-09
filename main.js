@@ -23,6 +23,12 @@ var addToTeam = document.querySelector("input[value = 'Add to team']");
 var getStats = document.querySelector("input[value = 'View Stats']");
 addToTeam.addEventListener('click', getInfo);
 getStats.addEventListener('click', getInfo);
+document.addEventListener('keydown', event => {
+  if(event.keyCode == 13) {
+    console.log("enter pressed");
+    getInfo();
+  }
+});
 
 var body = document.querySelector('body');
 
@@ -40,7 +46,7 @@ function change() {
 function revert() {
 
   this.setAttribute('src','http://www.upl.co/uploads/pokeballPNG301527618582.png')
-  
+
 }
 
 function reveal(id) {
@@ -55,7 +61,7 @@ function reveal(id) {
 
 function getInfo() {
   var id = document.querySelector('input[name = "pokemon"]').value;
-  if (this.value == 'View Stats'){
+  if (this.value == 'View Stats' || event.keyCode == 13){
     setPokemon(id);
   } else if (this.value == 'Add to team') {
     reveal(id);
