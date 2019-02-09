@@ -3,5 +3,6 @@ allow name and number
 fail safes
 responsivesness
 animate.css?
+stats shhow on enter
 
 set amount of lives
